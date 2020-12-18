@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/jquery.js"></script>
+    <title>Material Dryier</title>
+</head>
+<body>
+    <header class="l-top">
+        <a href="#"><img id='connectivity' src="/icons/icon_ethernet-on.svg"></a>
+        <p class="e-top-date"> <span id='current_day'></span> | <span id="currentTime"></span></p>
+        <a href="#"><img id='door' src="/icons/icon_lock-off.svg"></a>
+    </header>
+    {% block content %} {% end %}
+    <nav class="l-nav">
+        {% if where == 'home' %}
+        <a href="/" class="e-nav-item e-nav-item--selected">
+        {% else %}
+        <a href="/" class="e-nav-item">
+        {% end %}
+            <img class="e-nav-item__ico" src="/icons/icon_menu-home.svg"/>
+            home
+        </a>
+        {% if where == 'load' %}
+        <a href="/load" class="e-nav-item e-nav-item--selected">
+        {% else %}
+        <a href="/load" class="e-nav-item">
+        {% end %}
+            <img class="e-nav-item__ico" src="/icons/icon_menu-filament.svg"/>
+            load filament
+        </a>
+        {% if where == 'info' %}
+        <a href="/info" class="e-nav-item e-nav-item--selected">
+        {% else %}
+        <a href="/info" class="e-nav-item">
+        {% end %}
+            <img class="e-nav-item__ico" src="/icons/icon_menu-info.svg"/>
+            info
+        </a>
+        {% if where == 'config' %}
+        <a href="/config" class="e-nav-item e-nav-item--selected">
+        {% else %}
+        <a href="/config" class="e-nav-item">
+        {% end %}
+            <img class="e-nav-item__ico" src="/icons/icon_menu-config.svg"/>
+            config
+        </a>
+    </nav>
+
+</body>
+<script src="/js/base.js"></script>
+</html>

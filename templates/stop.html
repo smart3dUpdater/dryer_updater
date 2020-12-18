@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Material Dryier</title>
+</head>
+<body>
+    <header class="l-top">
+        <a href="#"><img src="./icons/icon_ethernet-on.svg"></a>
+        <p class="e-top-date"> nov 13 | <span id="currentTime">13:55</span></p>
+        <a href="#"><img src="./icons/icon_lock-off.svg"></a>
+    </header>
+    <main class="l-thirds">
+        <a href="stop.html" class="e-stop">
+            <img class="e-stop__ico" src="icons/icon_stop.svg"/>
+            stop
+        </a>
+        <div class="l-timers">
+            <p class="e-timer-title">
+                elapsed time
+            </p>
+            <p class="e-timer-timer">
+                00:35
+            </p>
+            <p class="e-timer-title">
+                remaining time
+            </p>
+            <p class="e-timer-timer">
+                00:55
+            </p>
+        </div>
+        <div class="l-drying-right">
+            <a href="feeder.html" class="e-feeder e-feeder--active e-feeder--small">feeder</a>
+            <div class="e-progress-container e-progress-container--small">
+                <progress class="e-progress" max="100" value="10" style="--progress: 10"></progress>
+                <meter class="e-temp" max="50" value="21" style="--temp: 21"></meter>
+                <div class="e-progress-inner">
+                    <p class="e-progress-inner__title">dryer</p>
+                    <p id="temp" class="e-progress-inner__temp">21ºC</p>
+                    <p class="e-progress-inner__status">DRYING</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <nav class="l-nav">
+
+        <a href="home.html" class="e-nav-item e-nav-item--selected">
+            <img class="e-nav-item__ico" src="icons/icon_menu-home.svg"/>
+            home
+        </a>
+        <a href="load.html" class="e-nav-item">
+            <img class="e-nav-item__ico" src="icons/icon_menu-filament.svg"/>
+            load filament
+        </a>
+        <a href="info.html" class="e-nav-item">
+            <img class="e-nav-item__ico" src="icons/icon_menu-info.svg"/>
+            info
+        </a>
+        <a href="config.html" class="e-nav-item">
+            <img class="e-nav-item__ico" src="icons/icon_menu-config.svg"/>
+            config
+        </a>
+    </nav>
+
+    <div class="l-overlay">
+        <a href="/" class="l-overlay-info-container l-overlay-info-container--stop">
+            <div class="e-info-message">
+                <img class="e-close" src="icons/icon_close.svg"/>
+                <img class="e-close__ico" src="icons/icon_stop.svg"/>
+                <p class="e-info-message__text">
+                    Want to stop drying?
+                </p>
+                <div class="l-button-container">
+                    <p class="e-btn-yes">yes</p>
+                    <p class="e-btn-no">no</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

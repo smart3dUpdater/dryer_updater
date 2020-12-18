@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="l-dryed-container">
+    <div class="l-form-container">
+        <a id="material" class="l-form-element-program">
+            <p class="l-form-element__label__custom">Material</p>
+            <p class="l-form-element__text__custom">{{program[1]}}</p>
+        </a>            
+        <a id="pressure" class="l-form-element-program">
+            <p class="l-form-element__label__custom">Drying pressure</p>
+            <p class="l-form-element__text__custom">{{program[4]}}mb</p>            
+        </a>
+        <a id="duration" class="l-form-element-program">
+            <p class="l-form-element__label__custom">Drying duration</p>
+            <p class="l-form-element__text__custom">{{program[2]}}'</p>            
+        </a>
+        <a id="temperature" class="l-form-element-program">
+            <p class="l-form-element__label__custom">Chamber temperature</p>
+            <p class="l-form-element__text__custom">{{program[5]}}°C</p>            
+        </a>
+        <a id="preheating" class="l-form-element-program">
+            <p class="l-form-element__label__custom">Pre heating time</p>
+            <p class="l-form-element__text__custom">{{program[3]}}'</p>            
+        </a>
+        <a id='subcicles' class="l-form-element-program">
+            <p class="l-form-element__label__custom">Number of subcicles</p>
+            <p class="l-form-element__text__custom">{{program[6]}}</p>            
+        </a>
+        <a id='activate' class="l-form-element--activate">
+            <p class="l-form-element__button">Activate</p>
+        </a>
+    </div>
+</main>
+<script>
+    var program = 'edit'
+    var id_edit = {{program[0]}}
+</script>
+<script src="/js/custom_program.js"></script>
+{% end %}

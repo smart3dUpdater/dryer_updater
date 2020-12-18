@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="l-main-container">
+    <div class="l-info-container">
+        <div class="e-bordered-text e-bordered-text--info">
+            <p class="e-bordered-text__left">Hardware version</p>
+            <p class="e-bordered-text__right">---</p>
+        </div>
+        <div class="e-bordered-text e-bordered-text--info">
+            <p class="e-bordered-text__left">Software version</p>
+            <p class="e-bordered-text__right">---</p>
+        </div>
+        <!-- Para reactivar el update via Git descomentar esta linea y el javascript correspondiente
+        <div id="update_btn" class="e-bordered-text e-bordered-text--check">-->
+        <div class="e-bordered-text e-bordered-text--check --inactive">
+            <p class="e-bordered-text__center">Make update</p>
+        </div>
+    </div>
+</main>
+<div id='update_popup' class="l-overlay">
+    <div class="l-message-container">
+        <div class="e-message">
+            Updating, wait!
+        </div>
+    </div>
+</div>
+<!--<script src="/js/updater.js"></script>-->
+{% end %}

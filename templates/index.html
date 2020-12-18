@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="l-thirds">
+    <a href="/start-drying" class="e-start">
+        <img class="e-start__ico" src="icons/icon_play.svg"/>
+        start drying
+    </a>
+    <div class="e-progress-container">
+        <progress class="e-progress" max="100" value="10" style="--progress: 10"></progress>
+        <meter class="e-temp" max="50" value="21" style="--temp: 21"></meter>
+        <div class="e-progress-inner">
+            <p class="e-progress-inner__title">dryer</p>
+            <p id="temp" class="e-progress-inner__temp"></p>
+            <p class="e-progress-inner__status">READY</p>
+        </div>
+    </div>
+    <a class="e-feeder e-feeder--active">Feeder</a>
+</main>
+{% if door_open_error %}
+<div class="l-overlay l-overlay--visible">
+    <a href="/" class="l-overlay-info-container l-overlay-info-container--close">
+        <div class="e-info-message">
+            <img class="e-close" src="icons/icon_close.svg"/>
+            <img class="e-start__ico" src="icons/icon_play.svg"/>
+            <p class="e-info-message__text">
+                Close the door correctly to start drying
+            </p>
+        </div>
+    </a>
+</div>
+{% end %}
+<script>
+    {% if drying %}
+    var drying = true;
+    {% else %}
+    var drying = false;
+    {% end %}
+</script>
+<script src="/js/dry.js"></script>
+{% end %}

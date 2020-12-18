@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="l-main-container">
+    <div class="l-thirds-buttons">
+        <!-- <a href="/add-filament" class="e-bordered-button">-->
+        <a class="e-bordered-button --inactive">
+            <img class="e-bordered-button__ico" src="icons/icon_add-feeder.svg" />
+            <p class="e-bordered-button__text">
+                add filament in feeder
+            </p>
+        </a>
+        <a href="/load-filament" class="e-bordered-button">
+            <img class="e-bordered-button__ico" src="icons/icon_add-dryer.svg" />
+            <p class="e-bordered-button__text">
+                load filament <br /> in dryer
+            </p>
+        </a>
+        <a class="e-bordered-button --inactive">
+            <img class="e-bordered-button__ico" src="icons/icon_out-filament.svg" />
+            <p class="e-bordered-button__text">
+                unload filament spool
+            </p>
+        </a>
+    </div>
+</main>
+{% end %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- keyboard widget css & script -->
+<link href="/Keyboard-master/css/keyboard.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/keyboardui.css">
+<script src="/Keyboard-master/js/jquery.keyboard.js"></script>
+<!-- css for the preview keyset extension -->
+<link href="/Keyboard-master/css/keyboard-previewkeyset.css" rel="stylesheet">
+<script src="/Keyboard-master/js/jquery.keyboard.extension-extender.js"></script>
+<main class="l-main-container">
+    <div class="l-network-info">
+        <div id="wifi_connections" class="l-network-info-group l-network-info-group--shortened">
+            <p class="l-network-key">WiFi</p>
+            <p class="l-network-value">{{ selected }}</p>
+        </div>
+        <div id="disconnect" class="l-network-info-group l-network-info-group--disconnect">
+            <a class="l-network-value">disconnect</a>
+        </div>
+        <div class="l-network-info-group">
+            <p class="l-network-key">IP Adress</p>
+            <p class="l-network-value">{{ ip_wifi }}</p>
+        </div>
+        <div class="l-network-info-group">
+            <p class="l-network-key">Ethernet IP Adress</p>
+            <p class="l-network-value">{{ ip_eth }}</p>
+        </div>
+    </div>
+</main>
+<div id='listed_wifi' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <img id="close_listed_wifi_popup" class="e-close" src="/icons/icon_close.svg"/>
+        <div id='wifi_list' class="l-overlay-form-list">
+            <a class="l-overlay-form-list--item wifi_item">Wait ...</a>
+        </div>
+    </div>
+</div>
+<div id='password_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <img id="close_password_popup" class="e-close" src="/icons/icon_close.svg"/>
+            <h2 id="network_name_title" class="e-info-message__h2"></h2>
+            <p class="e-info-message__text e-info-message__text--small">
+            </p>
+            <input id='keyboard' type="text" class="e-info-message__input">
+            <input id='network_name' type="hidden">
+            <div class="l-button-container">
+                <p class="e-btn-yes">ok</p>
+                <p class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='wait_fetching_modal' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <div id='wifi_list' class="l-overlay-form-list">
+            <a class="l-overlay-form-list--item wifi_item">Wait ...</a>
+        </div>
+    </div>
+</div>
+<div id='connection_ok_modal' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <img id="close_ok_popup" class="e-close" src="/icons/icon_close.svg"/>
+        <div id='wifi_list' class="l-overlay-form-list">
+            <a class="l-overlay-form-list--item wifi_item">Connected</a>
+        </div>
+    </div>
+</div>
+<div id='connection_no_ok_modal' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <img id="close_no_ok_popup" class="e-close" src="/icons/icon_close.svg"/>
+        <div id='wifi_list' class="l-overlay-form-list">
+            <a class="l-overlay-form-list--item wifi_item">Error, try again</a>
+        </div>
+    </div>
+</div>
+<script src="/js/keyboard.js"></script>
+<script src="/js/wifi.js"></script>
+{% end %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="l-thirds">
+    <a id='stop_dry' href="#" class="e-stop">
+        <img class="e-stop__ico" src="/icons/icon_stop.svg" />
+        stop
+    </a>
+    <div class="l-timers">
+        <p id='action' class="e-timer-title"></p>
+        <p id='elapsed' class="e-timer-timer">00:00</p>
+        <p class="e-timer-title">
+            remaining time
+        </p>
+        <p id='remaining' class="e-timer-timer"></p>
+    </div>
+    <div class="l-drying-right">
+        <a id='preassure' href="#" class="e-feeder e-feeder--active e-feeder--small"></a>
+        <div class="e-progress-container e-progress-container--small">
+            <progress class="e-progress" max="100" value="10" style="--progress: 10"></progress>
+            <meter class="e-temp" max="50" value="21" style="--temp: 21"></meter>
+            <div class="e-progress-inner">
+                <p class="e-progress-inner__title">dryer</p>
+                <p id="temp" class="e-progress-inner__temp"></p>
+                <p class="e-progress-inner__status">DRYING</p>
+            </div>
+        </div>
+    </div>
+</main>
+<div id='stop_dry_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--stop">
+        <div class="e-info-message">
+            <img class="e-close" src="/icons/icon_close.svg"/>
+            <img class="e-close__ico" src="/icons/icon_stop.svg"/>
+            <p class="e-info-message__text">
+                Want to stop drying?
+            </p>
+            <div class="l-button-container">
+                <p id='stop_yes' class="e-btn-yes">yes</p>
+                <p id='stop_no' class="e-btn-no">no</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='dry_finished_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--stop">
+        <div class="e-info-message">
+            <img id='close_finished_popup' class="e-close" src="icons/icon_close.svg"/>
+            <p class="e-info-message__text">
+                Dry cycle completed succesfully!
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    {% if drying %}
+    var drying = true;
+    {% else %}
+    var drying = false;
+    {% end %}
+</script>
+<script src="/js/dry.js"></script>
+{% end %}

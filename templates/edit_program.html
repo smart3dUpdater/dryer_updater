@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- keyboard widget css & script -->
+<link href="/Keyboard-master/css/keyboard.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/keyboardui.css">
+<script src="/Keyboard-master/js/jquery.keyboard.js"></script>
+<!-- css for the preview keyset extension -->
+<link href="/Keyboard-master/css/keyboard-previewkeyset.css" rel="stylesheet">
+<script src="/Keyboard-master/js/jquery.keyboard.extension-extender.js"></script>
+<main class="l-dryed-container">
+    <div class="l-form-container">
+        <a id="material" class="l-form-element">
+            <p class="l-form-element__label__custom">Material</p>
+            <p class="l-form-element__text__custom">{{program[1]}}</p>
+        </a>            
+        <a id="pressure" class="l-form-element">
+            <p class="l-form-element__label__custom">Drying pressure</p>
+            <p class="l-form-element__text__custom">{{program[4]}}mb</p>            
+        </a>
+        <a id="duration" class="l-form-element">
+            <p class="l-form-element__label__custom">Drying duration</p>
+            <p class="l-form-element__text__custom">{{program[2]}}'</p>            
+        </a>
+        <a id="temperature" class="l-form-element">
+            <p class="l-form-element__label__custom">Chamber temperature</p>
+            <p class="l-form-element__text__custom">{{program[5]}}°C</p>            
+        </a>
+        <a id="preheating" class="l-form-element">
+            <p class="l-form-element__label__custom">Pre heating time</p>
+            <p class="l-form-element__text__custom">{{program[3]}}'</p>            
+        </a>
+        <a id='subcicles' class="l-form-element">
+            <p class="l-form-element__label__custom">Number of subcicles</p>
+            <p class="l-form-element__text__custom">{{program[6]}}</p>            
+        </a>
+        <a id='activate' class="l-form-element--activate">
+            <p class="l-form-element__button">Activate</p>
+        </a>
+        <a id='save' class="l-form-element l-form-element--save">
+            <p class="l-form-element__button">Save program</p>
+        </a>
+    </div>
+</main>
+<div id='material_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <h2 class="e-info-message__h2">Material</h2>
+            <p class="e-info-message__text e-info-message__text--small">
+            </p>
+            <input id='keyboard' type="text" class="e-info-message__input">
+            <div class="l-button-container">
+                <p id="material_confirm" class="e-btn-yes">ok</p>
+                <p id="material_no" class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='pressure_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <h2 class="e-info-message__h2">Pressure</h2>
+            <p class="e-info-message__text e-info-message__text--small">
+            </p>
+            <input id='pressure_keyboard' type="text" class="e-info-message__input numeric_keyboard">
+            <div class="l-button-container">
+                <p id="pressure_confirm" class="e-btn-yes">ok</p>
+                <p id="pressure_no" class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='duration_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <h2 class="e-info-message__h2">Duration</h2>
+            <p class="e-info-message__text e-info-message__text--small">
+            </p>
+            <input id='duration_keyboard' type="text" class="e-info-message__input numeric_keyboard">
+            <div class="l-button-container">
+                <p id="duration_confirm" class="e-btn-yes">ok</p>
+                <p id="duration_no" class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='temperature_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <h2 class="e-info-message__h2">Temperature</h2>
+            <p class="e-info-message__text e-info-message__text--small">
+            </p>
+            <input id='temperature_keyboard' type="text" class="e-info-message__input numeric_keyboard">
+            <div class="l-button-container">
+                <p id="temperature_confirm" class="e-btn-yes">ok</p>
+                <p id="temperature_no" class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='preheating_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <h2 class="e-info-message__h2">Pre heating time</h2>
+            <p class="e-info-message__text e-info-message__text--small">
+            </p>
+            <input id='preheating_keyboard' type="text" class="e-info-message__input numeric_keyboard">
+            <div class="l-button-container">
+                <p id="preheating_confirm" class="e-btn-yes">ok</p>
+                <p id="preheating_no" class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='subcicles_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <h2 class="e-info-message__h2">Subcicles</h2>
+            <p class="e-info-message__text e-info-message__text--small">
+            </p>
+            <input id='subcicles_keyboard' type="text" class="e-info-message__input numeric_keyboard">
+            <div class="l-button-container">
+                <p id="subcicles_confirm" class="e-btn-yes">ok</p>
+                <p id="subcicles_no" class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var program = 'edit'
+    var id_edit = {{program[0]}}
+</script>
+<script src="/js/keyboard.js"></script>
+<script src="/js/custom_program.js"></script>
+{% end %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="l-main-container">
+    <div class="l-thirds-buttons">
+        <!--<a href="/remaining" class="e-bordered-button ">-->
+        <a class="e-bordered-button --inactive">
+            <img class="e-bordered-button__ico" src="icons/icon_filament.svg" />
+            <p class="e-bordered-button__text">
+                remaining material
+            </p>
+        </a>
+        <a href="/dryed-material" class="e-bordered-button">
+            <img class="e-bordered-button__ico" src="icons/icon_dryer.svg" />
+            <p class="e-bordered-button__text">
+                dryed material
+            </p>
+        </a>
+        <a class="e-bordered-button --inactive">
+            <img class="e-bordered-button__ico" src="icons/icon_rfid.svg" />
+            <p class="e-bordered-button__text">
+                read <br> spool
+            </p>
+        </a>
+    </div>
+</main>
+{% end %}

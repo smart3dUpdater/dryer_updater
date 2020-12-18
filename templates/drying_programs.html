@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- keyboard widget css & script -->
+<link href="/Keyboard-master/css/keyboard.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/keyboardui.css">
+<script src="/Keyboard-master/js/jquery.keyboard.js"></script>
+<!-- css for the preview keyset extension -->
+<link href="/Keyboard-master/css/keyboard-previewkeyset.css" rel="stylesheet">
+<script src="/Keyboard-master/js/jquery.keyboard.extension-extender.js"></script>
+<main class="l-dryed-container">
+    <div class="l-form-container">
+        {% for program in programs %}
+       	    {% if program[0] == 0 %}
+                <a href="/custom-program" class="l-form-element-program">
+                    <p class="l-form-element__label">Custom program</p>            
+                </a>
+            {% else %}
+                {% if program[0] == active %}
+	            {% if program[7] == "no" %}
+                        <a href="/non-editable-program/{{program[0]}}" class="l-form-element-program l-form-element-active">                    
+                    {% else %}
+                        <a href="/edit-program/{{program[0]}}" class="l-form-element-program l-form-element-active">
+                    {% end %}
+                {% else %}
+                    {% if program[7] == "no" %}
+                        <a href="/non-editable-program/{{program[0]}}" class="l-form-element-program">
+                    {% else %}
+                        <a href="/edit-program/{{program[0]}}" class="l-form-element-program">
+                    {% end %}
+                {% end %}
+            <p class="l-form-element__label">{{ program[1] }}</p>            
+            </a>
+            {% end %}
+        {% end %}
+    </div>
+</main>
+{% end %}

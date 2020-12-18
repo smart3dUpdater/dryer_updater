@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- keyboard widget css & script -->
+<link href="/Keyboard-master/css/keyboard.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/keyboardui.css">
+<script src="/Keyboard-master/js/jquery.keyboard.js"></script>
+<!-- css for the preview keyset extension -->
+<link href="/Keyboard-master/css/keyboard-previewkeyset.css" rel="stylesheet">
+<script src="/Keyboard-master/js/jquery.keyboard.extension-extender.js"></script>
+<main class="l-dryed-container">
+    <div class="l-form-container">
+        <a class="l-form-element">
+            <p class="l-form-element__label">Brand</p>
+            <p class="l-form-element__text">KODAK</p>
+        </a>            
+        <a class="l-form-element l-form-element--2rows">
+            <p class="l-form-element__label">Notes</p>
+            <textarea name="notes" class="l-form-element__textarea"></textarea>
+        </a>
+        <a class="l-form-element">
+            <p class="l-form-element__label">Spool size</p>
+            <p class="l-form-element__text">750g</p>
+        </a>
+        <a id='diameter' class="l-form-element">
+            <p class="l-form-element__label">Diameter</p>
+            <p class="l-form-element__text">1.75mm</p>
+        </a>
+        <a id='density' class="l-form-element">
+            <p class="l-form-element__label">Density</p>
+            <p class="l-form-element__text">1.04g/cm3</p>
+        </a>
+        <a id='material' class="l-form-element">
+            <p class="l-form-element__label">Material</p>
+            <p class="l-form-element__text">ABS</p>
+        </a>
+        <a id='colour' class="l-form-element">
+            <p class="l-form-element__label">Colour</p>
+            <p class="l-form-element__text">Black</p>
+        </a>
+        <a href="/load" class="l-form-element l-form-element--back">
+            <p class="l-form-element__button">back</p>
+        </a>
+        <a id='save' class="l-form-element l-form-element--save">
+            <p class="l-form-element__button">save label</p>
+        </a>
+    </div>
+</main>
+<div id='material_popup' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <div class="l-overlay-form-list">
+            {% for data in materials %}
+            <a class="l-overlay-form-list--item material_item">{{ data[1] }}</a>
+            {% end %}
+            <a class="l-overlay-form-list--item custom_item">Custom</a>
+        </div>
+    </div>
+</div>
+<div id='colour_popup' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <div class="l-overlay-form-list">
+            {% for data in colours %}
+            <a class="l-overlay-form-list--item colour_item">{{ data[1] }}</a>
+            {% end %}
+            <a class="l-overlay-form-list--item custom_item">Custom</a>
+        </div>
+    </div>
+</div>
+<div id='density_popup' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <div class="l-overlay-form-list">
+            {% for data in densities %}
+            <a class="l-overlay-form-list--item density_item">{{ data[1] }}</a>
+            {% end %}
+            <a class="l-overlay-form-list--item custom_item">Custom</a>
+        </div>
+    </div>
+</div>
+<div id='diameter_popup' class="l-overlay">
+    <div class="l-overlay-form-container">
+        <div class="l-overlay-form-list">
+            {% for data in diameters %}
+            <a class="l-overlay-form-list--item diameter_item">{{ data[1] }}</a>
+            {% end %}
+            <a class="l-overlay-form-list--item custom_item">Custom</a>
+        </div>
+    </div>
+</div>
+<div id='custom_popup' class="l-overlay">
+    <div class="l-overlay-info-container l-overlay-info-container--input">
+        <div class="e-info-message">
+            <img id="close_custom_popup" class="e-close" src="icons/icon_close.svg"/>
+            <h2 class="e-info-message__h2">Custom brand name</h2>
+            <p class="e-info-message__text e-info-message__text--small">
+                Type the filament brand
+            </p>
+            <input id='keyboard' type="text" class="e-info-message__input">
+            <div class="l-button-container">
+                <p class="e-btn-yes">ok</p>
+                <p class="e-btn-no">cancel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id='saved_popup' class="l-overlay">
+    <a href="/load" class="l-overlay-info-container l-overlay-info-container--close">
+        <div class="e-info-message">
+            <img class="e-close" src="icons/icon_close.svg"/>
+            <p class="e-info-message__text">
+                The spool load was completed succesfully
+            </p>
+        </div>
+    </a>
+</div>
+<script src="/js/material.js"></script>
+<script src="/js/keyboard.js"></script>
+{% end %}
