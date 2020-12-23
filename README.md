@@ -1,5 +1,5 @@
 # dryer
-
+info: 
 sudo mkdir /var/www/dryer/public_html
 sudo chown -R pi: /var/www/dryer
 /var/www/dryer/public_html/
